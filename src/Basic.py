@@ -20,3 +20,14 @@ for x in bsobj.find_all('img',{'src':re.compile('.*\/img\d.jpg.*')}):
     print(x.parent)
 
 
+
+
+#find_all image tags and then display corresponding prices mentioned in the previous example
+
+for x in bsobj.find_all('img',{'src':re.compile('.*img\d.jpg.*')}):
+    print(x.parent.previous_sibling.get_text())
+
+#display all attributes declared in image tag
+
+for x in bsobj.find_all('img'):
+    print("Attributes :{}".format(x.attrs))
